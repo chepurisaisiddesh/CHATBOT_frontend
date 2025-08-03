@@ -17,7 +17,7 @@ sendBtn.onclick = async function() {
     userInput.value = "";
     appendMessage('bot', 'Thinking...');
     // Call backend
-    const response = await fetch('http://localhost:5000/generate', {
+    const response = await fetch('https://chatbot-backend-994k.onrender.com/generate', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({prompt: text})
@@ -32,3 +32,4 @@ sendBtn.onclick = async function() {
 userInput.addEventListener('keydown', function(e) {
     if (e.key === 'Enter') sendBtn.click();
 });
+
